@@ -8,3 +8,5 @@ begin
   end
 rescue LoadError
 end
+
+task :default => :spec
