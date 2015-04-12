@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+ENV['RAILS_ENV'] ||= 'test'
+
+require "bundler/setup"
+require "activerecord/view"
+require "combustion"
+require "pry"
+
+Combustion.initialize! :active_record
+
+begin
+  TEST_MODELS.each(&:create_view!)
+
+  Pry.start
+ensure
+  TEST_MODELS.each(&:drop_view!)
+end

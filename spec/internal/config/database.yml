@@ -1,0 +1,28 @@
+sqlite3: &sqlite3
+  pool: 5
+  timeout: 5000
+  database: <%= ENV['TRAVIS'] ? '":memory:"' : 'db/test.sqlite3' %>
+  adapter: sqlite3
+
+mysql: &mysql
+  database: activerecord_view_test
+  pool: 5
+  timeout: 5000
+  host: localhost
+  adapter:  mysql2
+  username: root
+  password:
+
+postgresql: &postgresql
+  database: activerecord_view_test
+  pool: 5
+  timeout: 5000
+  host: localhost
+  adapter: postgresql
+  min_messages: ERROR
+
+development:
+  <<: *sqlite3
+
+test:
+  <<: *sqlite3
