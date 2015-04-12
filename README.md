@@ -1,4 +1,4 @@
-# Activerecord::View
+# Activerecord::View [![Build Status](https://travis-ci.org/scryptmouse/activerecord-view.svg?branch=master)](https://travis-ci.org/scryptmouse/activerecord-view)
 
 Integration for ActiveRecord to facilitate easy use of views in migrations.
 
