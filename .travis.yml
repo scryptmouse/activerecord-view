@@ -7,3 +7,5 @@ rvm:
 before_script:
   - mysql -e 'create database activerecord_view_test'
   - psql -c 'create database activerecord_view_test' -U postgres
+addons:
+  postgresql: "9.3"
